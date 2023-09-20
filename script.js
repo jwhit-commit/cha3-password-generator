@@ -92,6 +92,19 @@ var displaySpecs = function (a,b,c,d,e) {
 
 displaySpecs(length,lowCase,upCase,numCase,specCase);
 
+// Change opacity on Details box when expanded
+var detailSection = document.querySelector("#specs");
+var detailBox = document.querySelector("details");
+
+
+var opacDetails = function() {
+  console.log(detailSection);
+  detailSection.setAttribute("style", "opacity: 1");
+  console.log(detailSection);
+}
+
+detailBox.addEventListener("toggle", opacDetails);
+
 
 // create library of characters
 var low = "abcdefghijklmnopqrstuvwxyz";
@@ -125,38 +138,36 @@ var changeSpecs = function() {
     alert("Must specific at least 1 character type.")
   } else {
     length = lengthText.value;
-    console.log(length)
   
     if (lowChecked.checked == true) {
       lowCase = true;
     } else {
       lowCase = false
     };
-    console.log(lowCase)
   
     if (upChecked.checked == true) {
       upCase = true;
     } else {
       upCase = false
     };
-    console.log(upCase)
   
     if (numChecked.checked == true) {
       numCase = true;
     } else {
       numCase = false
     };
-    console.log(numCase)
   
     if (specChecked.checked == true) {
       specCase = true;
     } else {
       specCase = false
     };
-    console.log(specCase)
   
     charSet = low + up + num + spec;
     charLibrary()
+
+    var passwordText = document.querySelector("#password");
+    passwordText.value = " ";
   }
 };
 
@@ -166,7 +177,7 @@ reSpecBtn.addEventListener("click", changeSpecs);
 
 
 // Create generatePassword function by matching a random number to character library, looping for password length
-var starterPass = "a";
+var starterPass = "";
 
 var generatePassword = function() {
   for (var i = 0; i < length; i++) {
@@ -175,7 +186,7 @@ var generatePassword = function() {
     starterPass = starterPass + tempChar;
   }
   tempPass = starterPass.slice(1);
-  starterPass = "a";
+  starterPass = "";
   return tempPass;
 
 }
@@ -194,9 +205,10 @@ function writePassword() {
 
 };
 
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
 
 
 
