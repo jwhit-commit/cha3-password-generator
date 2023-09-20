@@ -12,22 +12,40 @@
       <header>
         <h1>Password Generator</h1>
       </header>
-      <div class="card">
-        <div class="card-header">
+      <main class="card">
+        <section class="card-header">
           <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
+        </section>
+        <section class="card-body">
           <textarea
             readonly
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
-        </div>
-        <div class="card-footer">
+        </section>
+        <section class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
+        </section>
+      </main>
+      <footer>
+        <section class="specs">
+          <h3>Specified Preferences</h3>
+          <details>
+            <ul>
+              <li><label for="pwlength">Password length: </label><input type="text" id="pwlength"></input> </li>
+              <li>Character types
+                <ul>
+                  <li><label for="pwlow">Lower case? </label><input type="checkbox" id="pwlow"> </input></li>
+                  <li><label for="pwup">Upper case? </label><input type="checkbox" id="pwup"> </input></li>
+                  <li><label for="pwnum">Numbers? </label><input type="checkbox" id="pwnum"> </input></li>
+                  <li><label for="pwspec">Special characters? </label><input type="checkbox" id="pwspec"> </input></li>
+                </ul>
+              </li>
+            </ul>
+          </details>
+        </section>
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>
