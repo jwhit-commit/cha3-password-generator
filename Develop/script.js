@@ -67,7 +67,6 @@ var num = "1234567890";
 var spec = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 
 var charSet = low + up + num + spec;
-console.log(charSet)
 
 var charLibrary = function() {
   if (!lowCase) {
@@ -85,30 +84,27 @@ var charLibrary = function() {
 };
 
 charLibrary();
-console.log(charSet)
 
 
 // Create generatePassword function by matching a random number to character library, looping for password length
-var tempPass = "a";
+var starterPass = "a";
 
 var generatePassword = function() {
   for (var i = 0; i < length; i++) {
-    console.log(length);
     var charRand = Math.floor(Math.random() * charSet.length);
-    console.log(charRand);
     var tempChar = charSet[charRand];
-    console.log(tempChar);
-    tempPass = tempPass + tempChar;
-    console.log(tempPass);
+    starterPass = starterPass + tempChar;
   }
-  tempPass = tempPass.slice(1);
+  tempPass = starterPass.slice(1);
+  starterPass = "a";
   return tempPass;
-}
 
+}
 
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
@@ -118,6 +114,7 @@ function writePassword() {
   passwordText.value = password;
 
 };
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
