@@ -76,6 +76,7 @@ if (!(lowCase || upCase || numCase || specCase)) {
   charPrompt();
 };
 
+
 // create library of characters
 var low = "abcdefghijklmnopqrstuvwxyz";
 var up = low.toUpperCase();
@@ -101,6 +102,7 @@ var charLibrary = function() {
 };
 
 charLibrary();
+
 
 
 // Generate random number + match to library, loop as many times as password length
