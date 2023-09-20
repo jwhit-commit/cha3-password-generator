@@ -69,9 +69,14 @@ charPrompt();
 
 
 // Validate at least 1 type is selected
+var charError = "You must select at least one character type!";
 
+if (!(lowCase || upCase || numCase || specCase)) {
+  alert(charError);
+  charPrompt();
+};
 
-// Create a library of characters
+// create library of characters
 
 
 // Generate random number + match to library, loop as many times as password length
