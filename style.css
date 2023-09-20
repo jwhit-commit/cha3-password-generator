@@ -82,7 +82,7 @@ header {
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 16px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
@@ -117,6 +117,97 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+#specs {
+  width: 100%;
+  max-width: 800px;
+  padding: 30px 40px;
+  background-color: hsl(206, 17%, 28%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  opacity: .5;
+}
+
+details {
+  width: 100%;
+}
+
+details summary {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+}
+
+details ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+details li {
+  color: white
+}
+
+details > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+details > ul > li {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+details > ul > li > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+details > ul > li > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.specsheaders {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#pwlength {
+  margin: 25px 0;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#prefbtn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#reSpec {
+  font-size: 14px;
+  padding: 7px 17px;
+  margin: 0;
+}
+
 
 @media (max-width: 690px) {
   .btn {

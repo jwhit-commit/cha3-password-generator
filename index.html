@@ -29,21 +29,21 @@
         </section>
       </main>
       <footer>
-        <section class="specs">
-          <h3>Password Preferences</h3>
+        <section id="specs">
           <details>
+            <summary>Password Preferences</summary>
             <ul>
-              <li><label for="pwlength">Password length: </label><input type="number" min="8" max="128" id="pwlength"></input> </li>
-              <li>Character types
+              <li><label for="pwlength"><span class="specsheaders">Password length</span> </label><input type="number" min="8" max="128" id="pwlength"></input> </li>
+              <li><span class="specsheaders">Character types</span>
                 <ul>
-                  <li><label for="pwlow">Lower case? </label><input type="checkbox" id="pwlow"> </input></li>
-                  <li><label for="pwup">Upper case? </label><input type="checkbox" id="pwup"> </input></li>
-                  <li><label for="pwnum">Numbers? </label><input type="checkbox" id="pwnum"> </input></li>
-                  <li><label for="pwspec">Special characters? </label><input type="checkbox" id="pwspec"> </input></li>
+                  <li><label for="pwlow">Lower case?</label><input type="checkbox" id="pwlow"> </input></li>
+                  <li><label for="pwup">Upper case?</label><input type="checkbox" id="pwup"> </input></li>
+                  <li><label for="pwnum">Numbers?</label><input type="checkbox" id="pwnum"> </input></li>
+                  <li><label for="pwspec">Special characters?</label><input type="checkbox" id="pwspec"> </input></li>
                 </ul>
               </li>
             </ul>
-            <input type="submit" id="reSpec" value="Change Preferences"></input>
+            <section id="prefbtn"><input class="btn" type="submit" id="reSpec" value="Change Preferences"></input></section>
           </details>
         </section>
       </footer>
