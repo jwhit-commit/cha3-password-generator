@@ -60,6 +60,32 @@ if (!(lowCase || upCase || numCase || specCase)) {
 };
 
 
+// Display spec details in Details box
+var displaySpecs = function (a,b,c,d,e) {1
+  var lengthText = document.querySelector("#pwlength");
+  lengthText.value = a;
+
+  if (b) {
+    document.getElementById("pwlow").checked = true;
+  };
+
+  if (c) {
+    document.getElementById("pwup").checked = true;
+  };
+
+  if (d) {
+    document.getElementById("pwnum").checked = true;
+  };
+
+  if (e) {
+    document.getElementById("pwspec").checked = true;
+  };
+}
+
+displaySpecs(length,lowCase,upCase,numCase,specCase);
+
+
+
 // create library of characters
 var low = "abcdefghijklmnopqrstuvwxyz";
 var up = low.toUpperCase();
