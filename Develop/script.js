@@ -60,9 +60,9 @@ var specCase = false;
 
 var charPrompt = function () {
   lowCase = confirm(lowMessage);
-  // upCase = confirm(upMessage);
-  // numCase = confirm(numMessage);
-  // specCase = confirm(specMessage);
+  upCase = confirm(upMessage);
+  numCase = confirm(numMessage);
+  specCase = confirm(specMessage);
 }
 
 charPrompt();
@@ -76,7 +76,33 @@ if (!(lowCase || upCase || numCase || specCase)) {
   charPrompt();
 };
 
+
 // create library of characters
+var low = "abcdefghijklmnopqrstuvwxyz";
+var up = low.toUpperCase();
+var num = "1234567890";
+var spec = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
+
+var charSet = low + up + num + spec;
+console.log(charSet)
+
+var charLibrary = function() {
+  if (!lowCase) {
+    charSet = charSet.replace(low,"");
+  }
+  if (!upCase) {
+    charSet = charSet.replace(up,"");
+  }
+  if (!numCase) {
+    charSet = charSet.replace(num,"");
+  }
+  if (!specCase) {
+    charSet = charSet.replace(spec,"");
+  }
+};
+
+charLibrary();
+
 
 
 // Generate random number + match to library, loop as many times as password length
