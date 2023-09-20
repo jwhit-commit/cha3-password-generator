@@ -1,20 +1,3 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-};
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
 
 // Prompt for password length 
 var lenMessage = "Let's make you a password! How long should it be? (Must be between 8 and 128 characters)";
@@ -102,12 +85,42 @@ var charLibrary = function() {
 };
 
 charLibrary();
+console.log(charSet)
+
+
+// Create generatePassword function by matching a random number to character library, looping for password length
+var tempPass = "a";
+
+var generatePassword = function() {
+  for (var i = 0; i < length; i++) {
+    console.log(length);
+    var charRand = Math.floor(Math.random() * charSet.length);
+    console.log(charRand);
+    var tempChar = charSet[charRand];
+    console.log(tempChar);
+    tempPass = tempPass + tempChar;
+    console.log(tempPass);
+  }
+  tempPass = tempPass.slice(1);
+  return tempPass;
+}
 
 
 
-// Generate random number + match to library, loop as many times as password length
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-// Store all that in the generatePassword function -- RETURN final password
+  passwordText.value = password;
+
+};
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 
 
