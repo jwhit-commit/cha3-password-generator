@@ -60,30 +60,37 @@ if (!(lowCase || upCase || numCase || specCase)) {
 };
 
 
+// Specs display assignment code
+var reSpecBtn = document.querySelector("#reSpec");
+var lengthText = document.querySelector("#pwlength");
+var lowChecked = document.getElementById("pwlow");
+var upChecked = document.getElementById("pwup");
+var numChecked = document.getElementById("pwnum");
+var specChecked = document.getElementById("pwspec");
+
+
 // Display spec details in Details box
-var displaySpecs = function (a,b,c,d,e) {1
-  var lengthText = document.querySelector("#pwlength");
-  lengthText.value = a;
+var displaySpecs = function (a,b,c,d,e) {
+  lengthText.value = a.replaceAll(" ","");
 
   if (b) {
-    document.getElementById("pwlow").checked = true;
+    lowChecked.checked = true;
   };
 
   if (c) {
-    document.getElementById("pwup").checked = true;
+    upChecked.checked = true;
   };
 
   if (d) {
-    document.getElementById("pwnum").checked = true;
+    numChecked.checked = true;
   };
 
   if (e) {
-    document.getElementById("pwspec").checked = true;
+    specChecked.checked = true;
   };
 }
 
 displaySpecs(length,lowCase,upCase,numCase,specCase);
-
 
 
 // create library of characters
@@ -112,6 +119,52 @@ var charLibrary = function() {
 charLibrary();
 
 
+// Create re-spec function
+var changeSpecs = function() {
+  if (lowChecked.checked == false && upChecked.checked == false && numChecked.checked == false && specChecked.checked == false) {
+    alert("Must specific at least 1 character type.")
+  } else {
+    length = lengthText.value;
+    console.log(length)
+  
+    if (lowChecked.checked == true) {
+      lowCase = true;
+    } else {
+      lowCase = false
+    };
+    console.log(lowCase)
+  
+    if (upChecked.checked == true) {
+      upCase = true;
+    } else {
+      upCase = false
+    };
+    console.log(upCase)
+  
+    if (numChecked.checked == true) {
+      numCase = true;
+    } else {
+      numCase = false
+    };
+    console.log(numCase)
+  
+    if (specChecked.checked == true) {
+      specCase = true;
+    } else {
+      specCase = false
+    };
+    console.log(specCase)
+  
+    charSet = low + up + num + spec;
+    charLibrary()
+  }
+};
+
+
+// Code re-spec button click
+reSpecBtn.addEventListener("click", changeSpecs);
+
+
 // Create generatePassword function by matching a random number to character library, looping for password length
 var starterPass = "a";
 
@@ -128,7 +181,7 @@ var generatePassword = function() {
 }
 
 
-// Assignment Code
+// Generate button assignment Code 
 var generateBtn = document.querySelector("#generate");
 
 

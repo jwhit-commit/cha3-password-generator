@@ -30,10 +30,10 @@
       </main>
       <footer>
         <section class="specs">
-          <h3>Specified Preferences</h3>
+          <h3>Password Preferences</h3>
           <details>
             <ul>
-              <li><label for="pwlength">Password length: </label><input type="text" id="pwlength"></input> </li>
+              <li><label for="pwlength">Password length: </label><input type="number" min="8" max="128" id="pwlength"></input> </li>
               <li>Character types
                 <ul>
                   <li><label for="pwlow">Lower case? </label><input type="checkbox" id="pwlow"> </input></li>
@@ -43,6 +43,7 @@
                 </ul>
               </li>
             </ul>
+            <input type="submit" id="reSpec" value="Change Preferences"></input>
           </details>
         </section>
       </footer>
