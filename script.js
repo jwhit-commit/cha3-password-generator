@@ -98,12 +98,13 @@ var detailBox = document.querySelector("details");
 
 
 var opacDetails = function() {
-  console.log(detailSection);
-  detailSection.setAttribute("style", "opacity: 1");
-  console.log(detailSection);
+  if (detailBox.getAttribute("open") == "") {
+    detailSection.setAttribute("style", "opacity: 1")
+  } else detailSection.setAttribute("style", "opacity: .5");
 }
 
 detailBox.addEventListener("toggle", opacDetails);
+
 
 
 // create library of characters

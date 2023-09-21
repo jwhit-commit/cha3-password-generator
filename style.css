@@ -206,6 +206,9 @@ details > ul > li > ul > li {
   font-size: 14px;
   padding: 7px 17px;
   margin: 0;
+  background-color: hsl(206, 69%, 80%);
+  color: hsl(206, 17%, 28%);
+  
 }
 
 
